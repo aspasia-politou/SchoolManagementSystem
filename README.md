@@ -28,10 +28,15 @@ Then, to start the program, run the following command:
 $ ./school_system 1 2 3 4 5
 
 In my example (above) I used:
+
 capacity of class = 1
+
 level of tiredness (per hour) for junior students = 2
+
 level of tiredness (per hour) for senior students = 3
+
 level of tiredness (per hour) for the teacher = 4
+
 number of operation hours of school = 5
 
 [You can change the values into the integers of your preference]

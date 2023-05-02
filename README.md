@@ -24,6 +24,7 @@ To run the program, you will need to have a C++ compiler installed on your syste
 $ g++ main.cpp -o school_system
 
 Then, to start the program, run the following command:
+
 $ ./school_system 1 2 3 4 5
 
 In my example (above) I used:

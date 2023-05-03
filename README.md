@@ -18,13 +18,15 @@ Finally, the <strong>School</strong> class serves as the main program interface,
 Overall, the exercise is designed to test your understanding of object-oriented programming principles and your ability to implement a complex system with multiple interacting components.
 
 ### Usage
-To run the program, you will need to have a C++ compiler installed on your system. Once you have the compiler set up, you can compile the program by running the following command:
+To run the program, you will need to have a C++ compiler installed on your system. Once you have the compiler set up, you can compile the program by running the following commands: <br>
+$ <strong>g++ -c objects.cpp </strong><br>
+$ <strong>g++ -c askisi3.cpp </strong> <br>
+$ <strong>g++ objects.o askisi3.o </strong> <br>
 
-$ <strong>g++ askisi3.cpp -o school_system</strong>
 
 Then, to start the program, run the following command:
 
-$<strong> ./school_system 1 2 3 4 5 </strong>
+$<strong> ./a.out 1 2 3 4 5 </strong>
 
 <br>
 

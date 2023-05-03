@@ -20,11 +20,11 @@ Overall, the exercise is designed to test your understanding of object-oriented 
 ### Usage
 To run the program, you will need to have a C++ compiler installed on your system. Once you have the compiler set up, you can compile the program by running the following command:
 
-$ g++ askisi3.cpp -o school_system
+$ <strong>g++ askisi3.cpp -o school_system</strong>
 
 Then, to start the program, run the following command:
 
-$ ./school_system 1 2 3 4 5
+$<strong> ./school_system 1 2 3 4 5 </strong>
 
 <br>
 

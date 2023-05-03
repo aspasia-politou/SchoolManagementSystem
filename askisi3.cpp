@@ -138,10 +138,7 @@ int c_class,Lj,Ls,Lt,N;
 	Lt=atoi(argv[4]);
 	N=atoi(argv[5]);	
 	srand(time(NULL));
-	//c_class=2;		//delete this later
-	//Ls=2;			//delete this later
-	//Lj=3;			//delete this later
-	//Lt=4;			//delete this later
+	
 	School school1(c_class);
 	Student** students;
 	Student** random_students;
@@ -156,14 +153,7 @@ int c_class,Lj,Ls,Lt,N;
 	random_students=new Student*[total_students];
 	teachers=new Teacher*[total_teachers];
 	random_teachers=new Teacher*[total_teachers];
-	for(int i=0;i<total_students;i++){
-		//students[i]=NULL;
-		//random_students[i]=NULL;
-	}
-	for(int i=0;i<total_teachers;i++){
-		//teachers[i]=NULL;
-		//random_teachers[i]=NULL;
-	}
+	
 	int count=0;
 	
 	for(int x=0;x<3;x++){
@@ -247,14 +237,12 @@ int c_class,Lj,Ls,Lt,N;
 	
 	//REALLOCATE MEMORY
 	for(int i=0;i<total_teachers;i++){
-		delete teachers[i];
-		delete random_teachers[i];
+    	delete random_teachers[i];
 	}
-	delete[] teachers;
 	delete[] random_teachers;
+	delete[] teachers;
 	
 	for(int i=0;i<total_students;i++){
-		delete students[i];
 		delete random_students[i];
 	}
 	delete[] students;
@@ -270,14 +258,9 @@ Human::Human(string in_name,int in_class_floor,int in_class_number, int in_count
 	class_number=in_class_number;
 	in_class=false;
 	counter_tiredness=in_counter_tiredness;
-	/*cout<<"A Human has been created "<<endl;
-	print();
-	cout<<endl;*/
 }
 Human::~Human(){
-	/*cout<<"A Human to destroy."<<endl;
-	print();
-	cout<<endl;*/
+
 }
 void Human::print(){
 	cout<<"|Name: "<<name<<" |ClassFloor:"<<class_floor<<" |Class Number:"<<class_number<<" |in_class:";
@@ -291,9 +274,7 @@ int Human::get_class_number(){	return class_number;}
 int Human::get_tiredness()const{	return counter_tiredness;}
 Student::Student(string in_name,int in_class_floor,int in_class_number,int in_counter_tiredness):
 Human(in_name,in_class_floor,in_class_number,in_counter_tiredness){
-//	cout<<"A Student has been created"<<endl;
-//	print();
-//	cout<<endl;
+
 }
 void Human::set_in_class(bool in_class){	this->in_class=in_class;}
 Student::~Student(){
@@ -302,13 +283,6 @@ Student::~Student(){
 	cout<<endl;
 }
 
-/*void Student::print(){
-	
-	cout<<"|Name: "<<name<<" |ClassFloor:"<<class_floor<<" |Class Number:"<<class_number<<" |in_class:";
-	if(in_class) cout<<"Yes ";
-	else cout<<"No ";
-	cout<<"|Counter_Tiredness:"<<counter_tiredness<<endl<<endl;
-}*/
 Junior::Junior(string in_name, int in_class_number, int in_class_floor,int in_Lj,int in_counter_tiredness):
 Student(in_name,in_class_floor,in_class_number,in_counter_tiredness){
 	Lj=in_Lj;
@@ -411,7 +385,6 @@ void Classroom::print(){
 }
 Area::Area(){
 	students=NULL;
-	/*cout<<"New Area is created!"<<endl;*/
 }
 Area::~Area(){
 	/*cout<<"An Area to be destroyed!"<<endl;*/
@@ -419,7 +392,6 @@ Area::~Area(){
 void Area::enter(Student* student){
 	students=student;
 	cout<<student->get_name()<<" enters ";
-	//students->print();
 }
 Student* Area::exit(){
 	Student* student=NULL;
@@ -427,8 +399,6 @@ Student* Area::exit(){
 		student=students;
 		students=NULL;
 		cout<<student->get_name()<<" exits ";
-		//return student;
-		//break;
 	}return student;
 }
 Corridor::Corridor(){
@@ -440,8 +410,6 @@ Corridor::~Corridor(){
 void Corridor::enter(Student* student){
 Area::enter(student);
 	cout<<"Corridor!"<<endl;
-	//student->print();
-	//cout<<endl;
 }
 Student* Corridor::exit(){
 	Student* student;
@@ -489,8 +457,6 @@ Stairs::~Stairs(){
 void Stairs::enter(Student* student){
 	Area::enter(student);
 	cout<<"Stairs!"<<endl;
-	//student->print();
-	//cout<<endl;
 }
 Student* Stairs::exit(){
 	Student* student;
@@ -507,8 +473,6 @@ Yard::~Yard(){
 void Yard::enter(Student* student){
 	Area::enter(student);
 	cout<<"Schoolyard!"<<endl;
-//	student->print();
-	//cout<<endl;
 }
 Student* Yard::exit(){
 	Student* student;
@@ -539,8 +503,6 @@ void School::enter(Student** random_students, int total_students,int c_class, Te
 }
 void School::enter(Student* student){
 cout<<student->get_name()<<" enters Schoolbuilding!"<<endl;
-//student->print();
-//cout<<endl;
 yard.enter(student);
 stairs.enter(yard.exit());
 int n=student->get_floor_number();

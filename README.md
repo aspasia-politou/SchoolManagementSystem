@@ -21,7 +21,7 @@ Your program must meet the following requirements:
 ### Usage
 To run the program, you will need to have a C++ compiler installed on your system. Once you have the compiler set up, you can compile the program by running the following command:
 
-$ g++ main.cpp -o school_system
+$ g++ askisi3.cpp -o school_system
 
 Then, to start the program, run the following command:
 

@@ -4,6 +4,8 @@
 #include <string>
 #include <ctime>
 #include "objects.hpp"
+#include "people.hpp"
+
 using namespace std;
 //class Corridor;
 
